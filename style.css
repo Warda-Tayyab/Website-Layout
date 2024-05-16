@@ -1,116 +1,223 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
-    font-family: arial;
+
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-      margin: 0px;
+    margin: 0;
 }
-header{
-    background-color:rgb(53, 78, 4);
-    display: flex;
-     align-items: center;
-     padding: 10px 0;
 
+header {
+    background-color: rgb(53, 78, 4);
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
 }
-header a{
+
+header a {
     color: white;
 }
-a{
+
+a {
     text-decoration: none;
 }
-header ul{
+
+header ul {
     list-style: none;
     display: flex;
-    padding: 0px;
-    margin: 0px;
-    
+    padding: 0;
+    margin: 0;
 }
-#logo{
-    margin: 0 auto; 
-    font-size: 30px;   
+
+#logo {
+    margin: 0 auto;
+    font-size: 30px;
     align-items: center;
 }
 
-#menu li{
-padding: 10px;
-}
-#social-links li{
+#menu li, #social-links li {
     padding: 10px;
 }
 
-#main{
+#main {
     display: flex;
+    flex-wrap: wrap;
 }
-aside{
-    flex: 0px 0px 60vw;
+
+aside {
+    flex: 1;
     background: beige;
     padding: 10px;
-    width: 300px;
+    max-width: 25%;
 }
-aside ul{
+
+aside ul {
     list-style: none;
     padding: 0;
 }
-aside ul a{
-    color:rgb(53, 78, 4);
+
+aside ul a {
+    color: rgb(53, 78, 4);
     display: block;
     padding: 10px;
     border-bottom: 1px solid gray;
 }
-aside img{
-    width: 250px;
-    height: 200px;
+
+aside img {
+    width: 100%;
+    height: auto;
 }
-article{
+
+article {
+    flex: 3;
     padding: 20px;
+    max-width: 75%;
 }
-.service-container{
-       display: flex;
-       justify-content: space-between;
-    
+
+.service-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-.service-box{
+
+.service-box {
     border: 1px solid #eee;
     padding: 10px;
     flex-basis: 32%;
     max-width: 370px;
-     margin-bottom: 15px;
-     display:flex;
-     flex-direction:column;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
-.service-box img{
-    width: 300px;
-   
+
+.service-box img {
+    width: 100%;
 }
-.service-box h3{
+
+.service-box h3 {
     margin: 5px 0 10px;
 }
-.service-box p{
+
+.service-box p {
     margin: 0 0 10px;
 }
 
-.Call-to-action{
-    align-self:flex-start ;
-    margin-top:auto;
+.Call-to-action {
+    align-self: flex-start;
+    margin-top: auto;
 }
-.Call-to-action a{
-    background:gray ;
-    color:#fff;
+
+.Call-to-action a {
+    background: gray;
+    color: #fff;
     border: 2px solid transparent;
     padding: 8px 13px;
-         display: block;
-    
+    display: block;
 }
-.Call-to-action a:hover{
-    background:transparent ;
-    color:gray;
+
+.Call-to-action a:hover {
+    background: transparent;
+    color: gray;
     border: 2px solid gray;
 }
-footer{
+
+footer {
     background: rgb(53, 78, 4);
     color: white;
     text-align: center;
     padding: 15px 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    #main {
+        flex-direction: column;
+    }
+    
+    aside {
+        max-width: 100%;
+        width: 100%;
+        order: 2;
+    }
+    
+    article {
+        max-width: 100%;
+        width: 100%;
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #logo {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    #menu ul, #social-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #menu li, #social-links li {
+        padding: 5px;
+    }
+
+    #main {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    article {
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .service-container {
+        flex-direction: column;
+    }
+
+    .service-box {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 5px;
+    }
+
+    #logo {
+        font-size: 20px;
+    }
+
+    #menu li, #social-links li {
+        padding: 5px;
+    }
+
+    aside img {
+        width: 100%;
+        height: auto;
+    }
+
+    .service-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .Call-to-action a {
+        padding: 5px 10px;
+    }
 }
